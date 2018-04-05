@@ -25,7 +25,7 @@ node('mypod') {
                 passwordVariable: 'DOCKER_HUB_PASSWORD']]) {
 
             sh """
-                docker build -t ${env.DOCKER_HUB_USER}/hellonode:${env.BUILD_NUMBER} .
+                docker build --build-arg=HTTP_PROXY=http://octopus.fau.edu:3128 --build-arg=HTTPS_PROXY=http://octopus.fau.edu:3128 -t ${env.DOCKER_HUB_USER}/hellonode:${env.BUILD_NUMBER} .
                 """
             sh "docker login -u ${env.DOCKER_HUB_USER} -p ${env.DOCKER_HUB_PASSWORD} "
             sh "docker push ${env.DOCKER_HUB_USER}/hellonode:${env.BUILD_NUMBER} "
