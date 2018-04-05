@@ -1,8 +1,8 @@
 # use a node base image
 FROM node:7-onbuild
 
-RUN npm config set proxy octopus.fau.edu:3128
-RUN npm config set https-proxy octopus.fau.edu:3128
+#RUN npm config set proxy octopus.fau.edu:3128
+#RUN npm config set https-proxy octopus.fau.edu:3128
 
 # set maintainer
 LABEL maintainer "mramsey@fau.edu"
