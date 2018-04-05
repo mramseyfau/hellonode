@@ -25,7 +25,7 @@ node('mypod') {
                 passwordVariable: 'DOCKER_HUB_PASSWORD']]) {
 
             sh """
-                cd hellonode
+                cd getintodevops-hellonode
                 docker build -t ${env.DOCKER_HUB_USER}/hellonode:${env.BUILD_NUMBER} .
                 """
             sh "docker login -u ${env.DOCKER_HUB_USER} -p ${env.DOCKER_HUB_PASSWORD} "
