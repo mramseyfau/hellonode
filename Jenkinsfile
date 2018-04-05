@@ -20,7 +20,7 @@ node('mypod') {
          * docker build on the command line */
         container('docker') {
             withCredentials([[$class: 'UsernamePasswordMultiBinding', 
-                credentialsId: 'dockerhub',
+                credentialsId: 'docker-hub-credentials',
                 usernameVariable: 'DOCKER_HUB_USER', 
                 passwordVariable: 'DOCKER_HUB_PASSWORD']]) {
 
