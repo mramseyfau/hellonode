@@ -30,6 +30,7 @@ node('mypod') {
                 """
             sh "docker login -u ${env.DOCKER_HUB_USER} -p ${env.DOCKER_HUB_PASSWORD} "
             sh "docker push ${env.DOCKER_HUB_USER}/hellonode:${env.BUILD_NUMBER} "
+            }
             //app = docker.build("getintodevops/hellonode")
         }
     }
