@@ -1,8 +1,11 @@
 # use a node base image
 FROM node:7-onbuild
 
+ENV http_proxy octopus.fau.edu:3128
+ENV https_proxy octopus.fau.edu:3128
+
 # set maintainer
-LABEL maintainer "miiro@getintodevops.com"
+LABEL maintainer "mramsey@fau.edu"
 
 # set a health check
 HEALTHCHECK --interval=5s \
